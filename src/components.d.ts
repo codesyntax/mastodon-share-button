@@ -20,7 +20,7 @@ export namespace Components {
     'share_text': string;
     'transparent': boolean;
   }
-  interface MyComponent {
+  interface MastodonShareButton {
     'button_text': string;
     'close_text': string;
     'instances': any;
@@ -44,15 +44,15 @@ declare global {
     new (): HTMLMastodonModalElement;
   };
 
-  interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
-  var HTMLMyComponentElement: {
-    prototype: HTMLMyComponentElement;
-    new (): HTMLMyComponentElement;
+  interface HTMLMastodonShareButtonElement extends Components.MastodonShareButton, HTMLStencilElement {}
+  var HTMLMastodonShareButtonElement: {
+    prototype: HTMLMastodonShareButtonElement;
+    new (): HTMLMastodonShareButtonElement;
   };
   interface HTMLElementTagNameMap {
     'mastodon-button': HTMLMastodonButtonElement;
     'mastodon-modal': HTMLMastodonModalElement;
-    'my-component': HTMLMyComponentElement;
+    'mastodon-share-button': HTMLMastodonShareButtonElement;
   }
 }
 
@@ -68,7 +68,7 @@ declare namespace LocalJSX {
     'share_text'?: string;
     'transparent'?: boolean;
   }
-  interface MyComponent {
+  interface MastodonShareButton {
     'button_text'?: string;
     'close_text'?: string;
     'instances'?: any;
@@ -79,7 +79,7 @@ declare namespace LocalJSX {
   interface IntrinsicElements {
     'mastodon-button': MastodonButton;
     'mastodon-modal': MastodonModal;
-    'my-component': MyComponent;
+    'mastodon-share-button': MastodonShareButton;
   }
 }
 
@@ -91,7 +91,7 @@ declare module "@stencil/core" {
     interface IntrinsicElements {
       'mastodon-button': LocalJSX.MastodonButton & JSXBase.HTMLAttributes<HTMLMastodonButtonElement>;
       'mastodon-modal': LocalJSX.MastodonModal & JSXBase.HTMLAttributes<HTMLMastodonModalElement>;
-      'my-component': LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+      'mastodon-share-button': LocalJSX.MastodonShareButton & JSXBase.HTMLAttributes<HTMLMastodonShareButtonElement>;
     }
   }
 }

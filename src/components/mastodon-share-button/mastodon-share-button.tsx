@@ -1,11 +1,11 @@
 import { Component, Prop, h, Listen } from '@stencil/core';
 
 @Component({
-  tag: 'my-component',
-  styleUrl: 'my-component.css',
+  tag: 'mastodon-share-button',
+  styleUrl: 'mastodon-share-button.css',
   shadow: true
 })
-export class MyComponent {
+export class MastodonShareButton {
   @Prop() modal_active = false;
   @Prop() button_text: string = 'Share mastodon';
   @Prop() close_text: string = 'Close';
@@ -23,7 +23,6 @@ export class MyComponent {
   }
 
   render() {
-    console.log(this.instances)
     return (
       <div>
         <mastodon-button text={this.button_text} onClick={() => this.openModal()}></mastodon-button>
