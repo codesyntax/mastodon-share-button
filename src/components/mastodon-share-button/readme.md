@@ -7,11 +7,14 @@
 
 ## Properties
 
-| Property | Attribute | Description     | Type     | Default     |
-| -------- | --------- | --------------- | -------- | ----------- |
-| `first`  | `first`   | The first name  | `string` | `undefined` |
-| `last`   | `last`    | The last name   | `string` | `undefined` |
-| `middle` | `middle`  | The middle name | `string` | `undefined` |
+| Property      | Attribute     | Description | Type      | Default     |
+| ------------- | ------------- | ----------- | --------- | ----------- |
+| `activated`   | `activated`   |             | `boolean` | `undefined` |
+| `button_text` | `button_text` |             | `string`  | `undefined` |
+| `instances`   | `instances`   |             | `any`     | `undefined` |
+| `open`        | `open`        |             | `boolean` | `false`     |
+| `share_text`  | `share_text`  |             | `string`  | `undefined` |
+| `transparent` | `transparent` |             | `boolean` | `false`     |
 
 
 ----------------------------------------------

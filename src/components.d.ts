@@ -10,39 +10,18 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 
 export namespace Components {
-  interface MastodonButton {
-    'text': string;
-  }
-  interface MastodonModal {
+  interface MastodonShareButton {
     'activated': boolean;
+    'button_text': string;
     'instances': any;
     'open': boolean;
     'share_text': string;
     'transparent': boolean;
   }
-  interface MastodonShareButton {
-    'button_text': string;
-    'close_text': string;
-    'instances': any;
-    'modal_active': boolean;
-    'share_text': string;
-  }
 }
 
 declare global {
 
-
-  interface HTMLMastodonButtonElement extends Components.MastodonButton, HTMLStencilElement {}
-  var HTMLMastodonButtonElement: {
-    prototype: HTMLMastodonButtonElement;
-    new (): HTMLMastodonButtonElement;
-  };
-
-  interface HTMLMastodonModalElement extends Components.MastodonModal, HTMLStencilElement {}
-  var HTMLMastodonModalElement: {
-    prototype: HTMLMastodonModalElement;
-    new (): HTMLMastodonModalElement;
-  };
 
   interface HTMLMastodonShareButtonElement extends Components.MastodonShareButton, HTMLStencilElement {}
   var HTMLMastodonShareButtonElement: {
@@ -50,35 +29,21 @@ declare global {
     new (): HTMLMastodonShareButtonElement;
   };
   interface HTMLElementTagNameMap {
-    'mastodon-button': HTMLMastodonButtonElement;
-    'mastodon-modal': HTMLMastodonModalElement;
     'mastodon-share-button': HTMLMastodonShareButtonElement;
   }
 }
 
 declare namespace LocalJSX {
-  interface MastodonButton {
-    'text'?: string;
-  }
-  interface MastodonModal {
+  interface MastodonShareButton {
     'activated'?: boolean;
+    'button_text'?: string;
     'instances'?: any;
-    'onCloseModalEventCompleted'?: (event: CustomEvent<any>) => void;
     'open'?: boolean;
     'share_text'?: string;
     'transparent'?: boolean;
   }
-  interface MastodonShareButton {
-    'button_text'?: string;
-    'close_text'?: string;
-    'instances'?: any;
-    'modal_active'?: boolean;
-    'share_text'?: string;
-  }
 
   interface IntrinsicElements {
-    'mastodon-button': MastodonButton;
-    'mastodon-modal': MastodonModal;
     'mastodon-share-button': MastodonShareButton;
   }
 }
@@ -89,8 +54,6 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
-      'mastodon-button': LocalJSX.MastodonButton & JSXBase.HTMLAttributes<HTMLMastodonButtonElement>;
-      'mastodon-modal': LocalJSX.MastodonModal & JSXBase.HTMLAttributes<HTMLMastodonModalElement>;
       'mastodon-share-button': LocalJSX.MastodonShareButton & JSXBase.HTMLAttributes<HTMLMastodonShareButtonElement>;
     }
   }

@@ -1,6 +1,6 @@
 {
-  "name": "mastodon-share",
-  "version": "0.0.1",
+  "name": "mastodon-share-button",
+  "version": "1.0.0",
   "description": "Stencil Component Starter",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -24,5 +24,22 @@
   "devDependencies": {
     "@stencil/core": "^1.8.8"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "typescript": "^3.7.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/bipoza/mastodon-social-button.git"
+  },
+  "keywords": [
+    "mastodon",
+    "share",
+    "button"
+  ],
+  "author": "bipoza",
+  "bugs": {
+    "url": "https://gitlab.com/bipoza/mastodon-social-button/issues"
+  },
+  "homepage": "https://gitlab.com/bipoza/mastodon-social-button#readme"
 }
