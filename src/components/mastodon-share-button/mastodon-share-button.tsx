@@ -19,7 +19,7 @@ export class MastodonShareButton {
   @Prop() icon_url: string = getAssetPath(`./assets/mastodon-logo.png`);
 
   @Prop() open: boolean = false;
-  @Prop() dark_mode:boolean = false;
+  @Prop() dark_mode:boolean = true;
   @Prop() share_message: string;
   @Prop() instances: string = '["https://mastodon.social"]';
   @State() selected_instance = this.instances.length != 0 ? this.parseJSON(this.instances)[0] : ["https://mastodon.social"];
@@ -74,7 +74,8 @@ export class MastodonShareButton {
     return (
       <div class={(this.dark_mode ? 'is-dark-mode' : '')}>
 
-        <button onClick={() => this.openModal()} class="share-button">{this.share_button_text}
+        <button onClick={() => this.openModal()} class="share-button">
+          {this.share_button_text}
           <img src={this.icon_url} />
         </button>
 

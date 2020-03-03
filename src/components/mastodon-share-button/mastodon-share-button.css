@@ -23,6 +23,7 @@
 
   /* Modal title */
   --modal-title-color: #111;
+  --modal-background-color:white;
 
   /* Send button */
   --send-modal-button-color: white;
@@ -71,18 +72,30 @@
   --share-button-background-color: #2c3e50;
   --share-button-background-color-hover: #23313f;
   --share-button-color: #ffffff;
-  --share-button-font-size: 16px;
-  --share-button-font-weight: bold;
-  --share-button-border: none;
-  /* opacity: 0; */
-  --close-modal-button-background-color: red;
-  --close-modal-button-boder: none;
-  --close-modal-button-font-size: 16px;
-  --close-modal-button-font-weight: bold;
+
+  /* Modal CSS Variables */
+  /* Close button */
+  --close-modal-button-background-color: 23313f;
+  --close-modal-button-color: white;
+  --close-modal-button-boder: 1px solid white;
+
+  /* Modal title */
+  --modal-title-color: white;
+  --modal-background-color:#23313f;
+
+  /* Send button */
+  --send-modal-button-color: white;
+  --send-modal-button-background-color: #2692da;
+
+
+  /* Select option */
+  --select-color: white;
+  --select-background-color: #2c3e50;
+  --select-border:2px solid white;
 }
 
 .modal-window {
-  background: white;
+  background: var(--modal-background-color);
   border-radius: 25px;
   width: 80%;
   max-width: 400px;
@@ -133,6 +146,8 @@ img {
   font-size: var(--share-button-font-size);
   font-weight: var(--share-button-font-weight);
   cursor: pointer;
+  height: calc(var(--img-width) + var(--share-button-padding)*2);
+  /* display: inline-block; */
 }
 
 .share-button:hover {
