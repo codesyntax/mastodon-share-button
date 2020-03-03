@@ -12,7 +12,7 @@ export class MastodonShareButton {
   @Prop() share_button_text: string = "Share to Mastodon";
   @Prop() close_button_text: string = "Close";
   @Prop() send_button_text: string = "Send";
-  @Prop() modal_title: string = "Share to mastodon";
+  @Prop() modal_title: string = "Share to Mastodon";
   @Prop() other_instance_text: string = "Other instance";
 
   //Customizable styles
