@@ -18,7 +18,7 @@
 | `other_instance_text` | `other_instance_text` |             | `string`  | `"Other instance"`                           |
 | `send_button_text`    | `send_button_text`    |             | `string`  | `"Send"`                                     |
 | `share_button_text`   | `share_button_text`   |             | `string`  | `"Share to Mastodon"`                        |
-| `share_message`       | `share_message`       |             | `string`  | `undefined`                                  |
+| `share_message`       | `share_message`       |             | `string`  | `null`                                       |
 
 
 ----------------------------------------------
