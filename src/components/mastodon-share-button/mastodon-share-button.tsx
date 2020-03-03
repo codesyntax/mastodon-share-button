@@ -26,7 +26,6 @@ export class MastodonShareButton {
   @State() value: string;
   @Element() private element: HTMLElement;
 
-
   componentDidLoad() {
     this.instances = this.instances.length == 0 ? '["https://mastodon.social"]' : this.instances;
     const modal = this.element.shadowRoot.getElementById("modal")
