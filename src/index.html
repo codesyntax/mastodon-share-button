@@ -8,14 +8,27 @@
 
   <script type="module" src="/build/mastodon-share.esm.js"></script>
   <script nomodule src="/build/mastodon-share.js"></script>
+  <!-- <link rel="stylesheet" href="/build/mastodon-share-button.css"> -->
+<style>
+  .mastodon-button{
+    /* --background-color:#0d548a; */
+    /* --img-width:30px;
+    --share-button-padding:10px;
+    --share-button-border-radius:50%; */
+    /* --button-color:red; */
+  }
+  
+</style>
 
 </head>
 
 <body>
   <mastodon-share-button instances='["https://mastodon.eus", "https://mastodon.jalgi.eus"]' share_message="Aproba bat"
-    share_button="Partekatu Mastodonen" close_button="Itxi" send_button="Bidali" modal_title="Partekatu mastodonen"
-    other_instance_text="Gehitu zure instantzia">
+    share_button_text="" close_button_text="Itxi" send_button_text="Bidali" modal_title="Partekatu mastodonen"
+    other_instance_text="Gehitu zure instantzia" class="mastodon-button">
   </mastodon-share-button>
+
+
 </body>
 
 </html>

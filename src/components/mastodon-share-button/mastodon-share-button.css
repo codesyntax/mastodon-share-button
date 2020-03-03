@@ -1,53 +1,174 @@
+:host {
+  --img-width: 40px;
+  --img-height: auto;
+  /* Share button CSS Variables */
+  --share-button-background-color: #cccccc;
+  --share-button-background-color-hover: #949292;
+  --share-button-border-radius: 5px;
+  --share-button-padding: 12px;
+  --share-button-color: #ffffff;
+  --share-button-font-size: 16px;
+  --share-button-font-weight: bold;
+  --share-button-border: none;
 
+  /* Modal CSS Variables */
+  /* Close button */
+  --close-modal-button-background-color: #cccccc;
+  --close-modal-button-boder: none;
+  --close-modal-button-font-size: 16px;
+  --close-modal-button-font-weight: bold;
+  --close-modal-button-color: white;
+  --close-modal-button-padding: 6px;
+  --close-modal-button-border-radius: 5px;
+
+  /* Modal title */
+  --modal-title-color: #111;
+
+  /* Send button */
+  --send-modal-button-color: white;
+  --send-modal-button-background-color: #2692da;
+  --send-modal-button-border-radius: 5px;
+  --send-modal-button-width: 100%;
+  --send-modal-button-height: 6vh;
+  --send-modal-button-min-height: 42px;
+  --send-modal-button-font-size: 4vh;
+
+  /* Select option */
+  --select-color: #2c3e50;
+  --select-background-color: white;
+  --select-border:2px solid #2c3e50;
+  --select-font-weight:bolder;
+  --select-font-size:18px;
+  --select-padding:10px;
+  --select-border-radius: 0.25em;
+  --select-line-height: 3;
+
+}
 .overlay {
-    opacity: 0;
-    visibility: hidden;
-
-    position:fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-
-    background: rgba(0,0,0,0.42);
-    -webkit-transition: opacity 0.5s, visibility 0s 0.5s;
-            transition: opacity 0.5s, visibility 0s 0.5s;
-    
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.42);
+  -webkit-transition: opacity 0.5s, visibility 0s 0.5s;
+  transition: opacity 0.5s, visibility 0s 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .is-visible {
-    opacity: 1;
-    visibility: visible;
-    -webkit-transition: opacity 0.5s;
-    transition: opacity 0.5s;
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
 }
 
-.is-transparent {
-    opacity: 0;
+.is-dark-mode {
+  --share-button-background-color: #2c3e50;
+  --share-button-background-color-hover: #23313f;
+  --share-button-color: #ffffff;
+  --share-button-font-size: 16px;
+  --share-button-font-weight: bold;
+  --share-button-border: none;
+  /* opacity: 0; */
+  --close-modal-button-background-color: red;
+  --close-modal-button-boder: none;
+  --close-modal-button-font-size: 16px;
+  --close-modal-button-font-weight: bold;
 }
 
-.modal-window{
-    background: white;
-    border-radius: 25px;
-    width: 75%;
-    height: 75%;
-
-    padding: 50px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.modal-window {
+  background: white;
+  border-radius: 25px;
+  width: 80%;
+  max-width: 400px;
+  /* height: 75%; */
+  height: auto;
+  padding: 30px;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.modal-window__content{
-    width: 100%;
-    height: 100%;
+.modal-window__content {
+  width: 100%;
+  height: 100%;
+}
+.modal-title {
+  color: var(--modal-title-color);
+  font-family: "Open Sans", sans-serif;
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 32px;
+  /* margin: 0 0 72px; */
+  text-align: center;
+}
+.close-modal {
+  float: right;
+  background-color: var(--close-modal-button-background-color);
+  padding: var(--close-modal-button-padding);
+  border-radius: var(--close-modal-button-border-radius);
+  color: var(--close-modal-button-color);
+  border: var(--close-modal-button-boder);
+  font-size: var(--close-modal-button-font-size);
+  font-weight: var(--close-modal-button-font-weight);
 }
 
-.close-modal{
-    float: right;
+img {
+  width: var(--img-width);
+  height: var(--img-height);
+}
+
+.share-button {
+  border: var(--share-button-boder);
+  background-color: var(--share-button-background-color);
+  padding: var(--share-button-padding);
+  border-radius: var(--share-button-border-radius);
+  color: var(--share-button-color);
+  font-size: var(--share-button-font-size);
+  font-weight: var(--share-button-font-weight);
+  cursor: pointer;
+}
+
+.share-button:hover {
+  background-color: var(--share-button-background-color-hover);
+}
+
+.send-button {
+  background-color: var(--send-modal-button-background-color);
+  padding: var(--modal-button-padding);
+  border-radius: var(--send-modal-button-border-radius);
+  color: var(--send-modal-button-color);
+  width: var(--send-modal-button-width);
+  height: var(--send-modal-button-height);
+  min-height: var(--send-modal-button-min-height);
+  font-size: var(--send-modal-button-font-size);
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  /* border: 0 !important; */
+  position: relative;
+  display: flex;
+  width: 100%;
+  /* height: 3em; */
+  line-height: var(--select-line-height);
+  overflow: hidden;
+  border-radius: var(--select-border-radius);
+  padding: var(--select-padding);
+  font-size: var(--select-font-size);
+  font-weight: var(--select-font-weight);
+  color: var(--select-color);
+  border: var(--select-border);
+  background-color: var(--select-background-color);
 }

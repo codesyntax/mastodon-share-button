@@ -11,15 +11,16 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 export namespace Components {
   interface MastodonShareButton {
-    'close_button': string;
+    'close_button_text': string;
+    'dark_mode': boolean;
+    'icon_url': string;
     'instances': string;
     'modal_title': string;
     'open': boolean;
     'other_instance_text': string;
-    'send_button': string;
-    'share_button': string;
+    'send_button_text': string;
+    'share_button_text': string;
     'share_message': string;
-    'transparent': boolean;
   }
 }
 
@@ -38,15 +39,16 @@ declare global {
 
 declare namespace LocalJSX {
   interface MastodonShareButton {
-    'close_button'?: string;
+    'close_button_text'?: string;
+    'dark_mode'?: boolean;
+    'icon_url'?: string;
     'instances'?: string;
     'modal_title'?: string;
     'open'?: boolean;
     'other_instance_text'?: string;
-    'send_button'?: string;
-    'share_button'?: string;
+    'send_button_text'?: string;
+    'share_button_text'?: string;
     'share_message'?: string;
-    'transparent'?: boolean;
   }
 
   interface IntrinsicElements {

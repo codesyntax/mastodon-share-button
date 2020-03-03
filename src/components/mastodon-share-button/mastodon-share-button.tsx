@@ -1,22 +1,25 @@
-import { Component, Prop, h, Element, State } from '@stencil/core';
+import { Component, Prop, h, Element, State, getAssetPath } from '@stencil/core';
 
 @Component({
   tag: 'mastodon-share-button',
   styleUrl: 'mastodon-share-button.css',
-  shadow: true
+  shadow: true,
+  assetsDirs: ['assets']
 })
 
 export class MastodonShareButton {
   //Customizable text translations
-  @Prop() share_button: string = "Share to Mastodon";
-  @Prop() close_button: string = "Close";
-  @Prop() send_button: string = "Send";
+  @Prop() share_button_text: string = "Share to Mastodon";
+  @Prop() close_button_text: string = "Close";
+  @Prop() send_button_text: string = "Send";
   @Prop() modal_title: string = "Share to mastodon";
   @Prop() other_instance_text: string = "Other instance";
 
+  //Customizable styles
+  @Prop() icon_url: string = getAssetPath(`./assets/mastodon-logo.png`);
 
   @Prop() open: boolean = false;
-  @Prop() transparent = false;
+  @Prop() dark_mode:boolean = false;
   @Prop() share_message: string;
   @Prop() instances: string = '["https://mastodon.social"]';
   @State() selected_instance = this.instances.length != 0 ? this.parseJSON(this.instances)[0] : ["https://mastodon.social"];
@@ -69,30 +72,34 @@ export class MastodonShareButton {
 
   render() {
     return (
-      <div>
-        <button onClick={() => this.openModal()}>{this.share_button}</button>
-        <div class={'overlay ' + (this.open ? 'is-visible' : '') + ' ' + (this.transparent ? 'is-transparent' : '')} id="modal">
+      <div class={(this.dark_mode ? 'is-dark-mode' : '')}>
+
+        <button onClick={() => this.openModal()} class="share-button">{this.share_button_text}
+          <img src={this.icon_url} />
+        </button>
+
+        <div class={'overlay ' + (this.open ? 'is-visible' : '') + ' ' + (this.dark_mode ? 'is-dark-mode' : '')} id="modal">
           <div class="modal-window">
-
-            <div class="modal-window__content"><slot>
-              <button class="close-modal" onClick={() => this.closeModal()}>{this.close_button}</button>
-              <h2>{this.modal_title}</h2>
-              <form onSubmit={(e) => this.handleSubmit(e)}>
-                <select onInput={(event) => this.handleSelect(event)}>
-                  {this.parseJSON(this.instances).map(instance => (
-                    <option value={instance}>{instance}</option>
-                  ))}
-                  <option value="other_instance">{this.other_instance_text}</option>
-                </select>
-                <br />
-                {
-                  this.selected_instance === 'other_instance' ? <input type="url" placeholder="https://" value={this.value} onInput={(event) => this.handleChange(event)} /> : null
-                }
-                <input type="submit" value={this.send_button} />
-              </form>
-
-            </slot></div>
-
+            <div class="modal-window__content">
+              <slot>
+                <button class="close-modal" onClick={() => this.closeModal()}>{this.close_button_text}</button>
+                <br/>
+                <h2 class="modal-title">{this.modal_title}</h2>
+                <form onSubmit={(e) => this.handleSubmit(e)}>
+                  <select onInput={(event) => this.handleSelect(event)}>
+                    {this.parseJSON(this.instances).map(instance => (
+                      <option value={instance}>{instance}</option>
+                    ))}
+                    <option value="other_instance">{this.other_instance_text}</option>
+                  </select>
+                  <br />
+                  {
+                    this.selected_instance === 'other_instance' ? <input type="url" placeholder="https://" value={this.value} onInput={(event) => this.handleChange(event)} /> : null
+                  }
+                  <input type="submit" value={this.send_button_text} class="send-button" />
+                </form>
+              </slot>
+            </div>
           </div>
         </div>
       </div>
