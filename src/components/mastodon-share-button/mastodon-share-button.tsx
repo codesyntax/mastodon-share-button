@@ -47,14 +47,18 @@ export class MastodonShareButton {
 
   handleSubmit(e) {
     e.preventDefault()
-    console.log(this.value);
-    console.log(this.selected_instance + '/share?text=' + this.share_message)
-    if (this.selected_instance == 'other_instance') {
-      if (this.value) {
-        window.open(this.value + '/share?text=' + this.share_message)
+   /*  console.log(this.value);
+    console.log(this.selected_instance + '/share?text=' + this.share_message) */
+    if(this.share_message){
+      if (this.selected_instance == 'other_instance') {
+        if (this.value) {
+          window.open(this.value + '/share?text=' + this.share_message)
+        }
+      } else {
+        window.open(this.selected_instance + '/share?text=' + this.share_message)
       }
-    } else {
-      window.open(this.selected_instance + '/share?text=' + this.share_message)
+    }else{
+      console.error("share_message tag return: ", this.share_message)
     }
   }
   handleChange(event) {
@@ -63,7 +67,7 @@ export class MastodonShareButton {
 
   handleSelect(event) {
     this.selected_instance = event.target.value
-    console.log(this.selected_instance)
+    /* console.log(this.selected_instance) */
   }
 
   parseJSON(string_value) {
@@ -79,7 +83,7 @@ export class MastodonShareButton {
           <img src={this.icon_url} class={this.share_button_text.length!=0?"icon-with-text":""}/>
         </button>
 
-        <div class={'overlay ' + (this.open ? 'is-visible' : '') + ' ' + (this.dark_mode ? 'is-dark-mode' : '')} id="modal">
+        <div class={'overlay ' + (this.open ? 'is-visible' : '')} id="modal">
           <div class="modal-window">
             <div class="modal-window__content">
               <slot>

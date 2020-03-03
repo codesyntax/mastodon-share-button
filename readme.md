@@ -16,16 +16,34 @@ This package is a user friendly web component to share to mastodon.
 
 # Getting Started
 ## Installation
-
-### HTML
-
+### Via CDN
 ```html
 <script src="https://unpkg.com/mastodon-share-button@1.0.0/dist/mastodon-share/mastodon-share.js"></script>
+```
+### Via NPM
+```bash
+$ npm install mastodon-share-button 
+```
+### Usage
 
+```html
 <!-- Simple use -->
 <mastodon-share-button share_message="Text to share"></mastodon-share-button>
+
+<!-- Customized -->
+<mastodon-share-button
+    instances='["https://mastodon.eus", "https://mastodon.jalgi.eus"]'
+    share_message="Text to share"
+    share_button_text="Custom share button text"
+    close_button_text="Custom close text"
+    send_button_text="Custom send text"
+    modal_title="Custom modal title"
+    other_instance_text="Custom other instance select option text"
+    dark_mode="true">
+</mastodon-share-button>
 ```
 
+# Documentation
 <!-- ### Frameworks support -->
 
 <!-- * [React](docs/installation/react.md)

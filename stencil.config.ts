@@ -1,7 +1,7 @@
 import { Config } from '@stencil/core';
 
 export const config: Config = {
-  namespace: 'mastodon-share',
+  namespace: 'mastodon-share-button',
   // globalStyle: 'src/global/variables.css',
   outputTargets: [
     {

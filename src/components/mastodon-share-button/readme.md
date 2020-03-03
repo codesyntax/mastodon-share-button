@@ -1,4 +1,4 @@
-# my-component
+# mastodon-share-button
 
 
 
