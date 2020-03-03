@@ -11,11 +11,14 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 export namespace Components {
   interface MastodonShareButton {
-    'activated': boolean;
-    'button_text': string;
-    'instances': any;
+    'close_button': string;
+    'instances': string;
+    'modal_title': string;
     'open': boolean;
-    'share_text': string;
+    'other_instance_text': string;
+    'send_button': string;
+    'share_button': string;
+    'share_message': string;
     'transparent': boolean;
   }
 }
@@ -35,11 +38,14 @@ declare global {
 
 declare namespace LocalJSX {
   interface MastodonShareButton {
-    'activated'?: boolean;
-    'button_text'?: string;
-    'instances'?: any;
+    'close_button'?: string;
+    'instances'?: string;
+    'modal_title'?: string;
     'open'?: boolean;
-    'share_text'?: string;
+    'other_instance_text'?: string;
+    'send_button'?: string;
+    'share_button'?: string;
+    'share_message'?: string;
     'transparent'?: boolean;
   }
 

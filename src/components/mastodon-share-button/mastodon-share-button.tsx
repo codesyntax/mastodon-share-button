@@ -1,53 +1,57 @@
-import { Component, Prop, h, Watch, State } from '@stencil/core';
+import { Component, Prop, h, Element, State } from '@stencil/core';
 
 @Component({
   tag: 'mastodon-share-button',
   styleUrl: 'mastodon-share-button.css',
   shadow: true
 })
+
 export class MastodonShareButton {
-  @Prop() button_text: string;
-  @Prop() open = false;
+  //Customizable text translations
+  @Prop() share_button: string = "Share to Mastodon";
+  @Prop() close_button: string = "Close";
+  @Prop() send_button: string = "Send";
+  @Prop() modal_title: string = "Share to mastodon";
+  @Prop() other_instance_text: string = "Other instance";
+
+
+  @Prop() open: boolean = false;
   @Prop() transparent = false;
-  @Prop() activated: boolean;
-  @Watch('activated')
-  watchHandler(newValue: boolean, oldValue: boolean) {
-    console.log('The new value of activated is: ', newValue);
-    console.log('The OLD value of activated is: ', oldValue);
-    this.open = newValue;
-  }
-  @Prop() share_text: string;
-  @Prop() instances;
-  @State() selected_instance = this.parseJSON(this.instances)[0];
-
-  // @Event({
-  //   eventName: 'closeModalEventCompleted',
-  //   composed: true,
-  //   cancelable: true,
-  //   bubbles: true,
-  // }) closeModalEventCompleted: EventEmitter;
-
+  @Prop() share_message: string;
+  @Prop() instances: string = '["https://mastodon.social"]';
+  @State() selected_instance = this.instances.length != 0 ? this.parseJSON(this.instances)[0] : ["https://mastodon.social"];
   @State() value: string;
+  @Element() private element: HTMLElement;
+
+
+  componentDidLoad() {
+    this.instances = this.instances.length == 0 ? '["https://mastodon.social"]' : this.instances;
+    const modal = this.element.shadowRoot.getElementById("modal")
+    modal.addEventListener("click", event => {
+      //Konparatuko dugu ea kanpoko modaleko div-a eta klikatutakoa berdina den, ixteko
+      if (event.target == modal) {
+        this.closeModal();
+      }
+    })
+  }
 
   closeModal() {
     this.open = false;
-    // this.closeModalEventCompleted.emit();
   }
   openModal() {
     this.open = true;
-    // this.closeModalEventCompleted.emit();
   }
 
   handleSubmit(e) {
     e.preventDefault()
     console.log(this.value);
-    console.log(this.selected_instance + '/share?text=' + this.share_text)
+    console.log(this.selected_instance + '/share?text=' + this.share_message)
     if (this.selected_instance == 'other_instance') {
       if (this.value) {
-        window.open(this.value + '/share?text=' + this.share_text)
+        window.open(this.value + '/share?text=' + this.share_message)
       }
     } else {
-      window.open(this.selected_instance + '/share?text=' + this.share_text)
+      window.open(this.selected_instance + '/share?text=' + this.share_message)
     }
   }
   handleChange(event) {
@@ -60,38 +64,31 @@ export class MastodonShareButton {
   }
 
   parseJSON(string_value) {
-    console.log("DONRAMON: ", string_value)
     return JSON.parse(string_value);
   }
 
   render() {
     return (
       <div>
-        <button onClick={() => this.openModal()}>{this.button_text}</button>
-        <div class={'overlay ' + (this.open ? 'is-visible' : '') + ' ' + (this.transparent ? 'is-transparent' : '')}>
+        <button onClick={() => this.openModal()}>{this.share_button}</button>
+        <div class={'overlay ' + (this.open ? 'is-visible' : '') + ' ' + (this.transparent ? 'is-transparent' : '')} id="modal">
           <div class="modal-window">
 
             <div class="modal-window__content"><slot>
-              <button class="close-modal" onClick={() => this.closeModal()}>Close button</button>
-              <h2>Mastodon share</h2>
-
+              <button class="close-modal" onClick={() => this.closeModal()}>{this.close_button}</button>
+              <h2>{this.modal_title}</h2>
               <form onSubmit={(e) => this.handleSubmit(e)}>
                 <select onInput={(event) => this.handleSelect(event)}>
                   {this.parseJSON(this.instances).map(instance => (
                     <option value={instance}>{instance}</option>
                   ))}
-                  <option value="other_instance">Other instance</option>
+                  <option value="other_instance">{this.other_instance_text}</option>
                 </select>
                 <br />
                 {
-                  this.selected_instance === 'other_instance' ?
-                    // <label>
-
-                    <input type="url" placeholder="https://" value={this.value} onInput={(event) => this.handleChange(event)} />
-                    // </label>
-                    : null
+                  this.selected_instance === 'other_instance' ? <input type="url" placeholder="https://" value={this.value} onInput={(event) => this.handleChange(event)} /> : null
                 }
-                <input type="submit" value="Submit" />
+                <input type="submit" value={this.send_button} />
               </form>
 
             </slot></div>
