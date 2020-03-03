@@ -76,7 +76,7 @@ export class MastodonShareButton {
 
         <button onClick={() => this.openModal()} class="share-button">
           {this.share_button_text}
-          <img src={this.icon_url} />
+          <img src={this.icon_url} class={this.share_button_text.length!=0?"icon-with-text":""}/>
         </button>
 
         <div class={'overlay ' + (this.open ? 'is-visible' : '') + ' ' + (this.dark_mode ? 'is-dark-mode' : '')} id="modal">
