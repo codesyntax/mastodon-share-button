@@ -18,9 +18,9 @@ export class MastodonShareButton {
   //Customizable styles
   @Prop() icon_url: string = getAssetPath(`./assets/mastodon-logo.png`);
 
+  @Prop() share_message: string = null;
   @Prop() open: boolean = false;
-  @Prop() dark_mode:boolean = true;
-  @Prop() share_message: string;
+  @Prop() dark_mode:boolean = false;  
   @Prop() instances: string = '["https://mastodon.social"]';
   @State() selected_instance = this.instances.length != 0 ? this.parseJSON(this.instances)[0] : ["https://mastodon.social"];
   @State() value: string;
@@ -58,7 +58,7 @@ export class MastodonShareButton {
         window.open(this.selected_instance + '/share?text=' + this.share_message)
       }
     }else{
-      console.error("share_message tag return: ", this.share_message)
+      console.error("share_message tag return: ", this.share_message, "\n> Make sure you fill in the label 'share_message'")
     }
   }
   handleChange(event) {

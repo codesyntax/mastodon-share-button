@@ -1,6 +1,8 @@
 :host {
+  /* Share button img size */
   --img-width: 40px;
   --img-height: auto;
+  
   /* Share button CSS Variables */
   --share-button-background-color: #cccccc;
   --share-button-background-color-hover: #949292;

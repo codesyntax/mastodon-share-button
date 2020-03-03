@@ -10,7 +10,7 @@
 | Property              | Attribute             | Description | Type      | Default                                      |
 | --------------------- | --------------------- | ----------- | --------- | -------------------------------------------- |
 | `close_button_text`   | `close_button_text`   |             | `string`  | `"Close"`                                    |
-| `dark_mode`           | `dark_mode`           |             | `boolean` | `true`                                       |
+| `dark_mode`           | `dark_mode`           |             | `boolean` | `false`                                      |
 | `icon_url`            | `icon_url`            |             | `string`  | `getAssetPath(`./assets/mastodon-logo.png`)` |
 | `instances`           | `instances`           |             | `string`  | `'["https://mastodon.social"]'`              |
 | `modal_title`         | `modal_title`         |             | `string`  | `"Share to Mastodon"`                        |

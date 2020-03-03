@@ -44,6 +44,37 @@ $ npm install mastodon-share-button
 ```
 
 # Documentation
+## Properties
+
+| Property              | Attribute             | Required     | Type      | Default                                      |
+| --------------------- | --------------------- | -----------  | --------- | -------------------------------------------- |
+| `share_message`       | `share_message`       | Required     | `string`  | `undefined`                                  |
+| `close_button_text`   | `close_button_text`   | Not Required | `string`  | `"Close"`                                    |
+| `dark_mode`           | `dark_mode`           | Not Required | `boolean` | `false`                                      |
+| `icon_url`            | `icon_url`            | Not Required | `string`  | `mastodon oficial logo`                      |
+| `instances`           | `instances`           | Not Required | `string`  | `'["https://mastodon.social"]'`              |
+| `modal_title`         | `modal_title`         | Not Required | `string`  | `"Share to Mastodon"`                        |
+| `open`                | `open`                | Not Required | `boolean` | `false`                                      |
+| `other_instance_text` | `other_instance_text` | Not Required | `string`  | `"Other instance"`                           |
+| `send_button_text`    | `send_button_text`    | Not Required | `string`  | `"Send"`                                     |
+| `share_button_text`   | `share_button_text`   | Not Required | `string`  | `"Share to Mastodon"`                        |
+
+## CSS Custom Properties
+| Name                            | Description
+| ------------------------------- | --------------------------------------------------------------------|
+| --share-button-background-color | Share button background color. Default to `#cccccc`                 |
+| --share-button-background-color-hover | Share button background hover color. Default to `#949292`     |
+
+  /* Share button CSS Variables */
+ 
+
+  --share-button-border-radius: 5px;
+  --share-button-padding: 12px;
+  --share-button-color: #ffffff;
+  --share-button-font-size: 16px;
+  --share-button-font-weight: bold;
+  --share-button-border: none;
+
 <!-- ### Frameworks support -->
 
 <!-- * [React](docs/installation/react.md)
