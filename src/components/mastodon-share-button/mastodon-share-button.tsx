@@ -47,8 +47,6 @@ export class MastodonShareButton {
 
   handleSubmit(e) {
     e.preventDefault()
-   /*  console.log(this.value);
-    console.log(this.selected_instance + '/share?text=' + this.share_message) */
     if(this.share_message){
       if (this.selected_instance == 'other_instance') {
         if (this.value) {
@@ -66,8 +64,7 @@ export class MastodonShareButton {
   }
 
   handleSelect(event) {
-    this.selected_instance = event.target.value
-    /* console.log(this.selected_instance) */
+    this.selected_instance = event.target.value;
   }
 
   parseJSON(string_value) {

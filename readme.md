@@ -2,7 +2,7 @@
 
 # Mastodon share button
 
-This package is a user friendly web component to share to mastodon.
+This package is a user friendly web component to share in mastodon.
 
 ## Browsers support
 
@@ -27,7 +27,7 @@ $ npm install mastodon-share-button
 ### Usage
 
 ```html
-<!-- Simple use -->
+<!-- Basic use -->
 <mastodon-share-button share_message="Text to share"></mastodon-share-button>
 
 <!-- Customized -->
@@ -60,6 +60,7 @@ $ npm install mastodon-share-button
 | `share_button_text`   | `share_button_text`   | Not Required | `string`  | `"Share to Mastodon"`                        |
 
 ## CSS Custom Properties (Styling)
+* Important: If you are using the dark mode you will not be able to apply any color variable, because this mode will overlap the dark mode 
 ### Share button
 | Name                                  | Description
 | -------------------------------       | --------------------------------------------------------------------|
