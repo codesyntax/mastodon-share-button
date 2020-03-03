@@ -2,7 +2,7 @@
   /* Share button img size */
   --img-width: 40px;
   --img-height: auto;
-  
+
   /* Share button CSS Variables */
   --share-button-background-color: #cccccc;
   --share-button-background-color-hover: #949292;
@@ -16,7 +16,8 @@
   /* Modal CSS Variables */
   /* Close button */
   --close-modal-button-background-color: #cccccc;
-  --close-modal-button-boder: none;
+  --close-modal-button-background-color-hover:#949292;
+  --close-modal-button-border: none;
   --close-modal-button-font-size: 16px;
   --close-modal-button-font-weight: bold;
   --close-modal-button-color: white;
@@ -24,7 +25,7 @@
   --close-modal-button-border-radius: 5px;
 
   /* Modal title */
-  --modal-title-color: #111;
+  --modal-title-color: #2c3e50;
   --modal-background-color: white;
 
   /* Send button */
@@ -78,7 +79,7 @@
   /* Close button */
   --close-modal-button-background-color: 23313f;
   --close-modal-button-color: white;
-  --close-modal-button-boder: 1px solid white;
+  --close-modal-button-border: 1px solid white;
 
   /* Modal title */
   --modal-title-color: white;
@@ -127,9 +128,14 @@
   padding: var(--close-modal-button-padding);
   border-radius: var(--close-modal-button-border-radius);
   color: var(--close-modal-button-color);
-  border: var(--close-modal-button-boder);
+  border: var(--close-modal-button-border);
   font-size: var(--close-modal-button-font-size);
   font-weight: var(--close-modal-button-font-weight);
+  cursor: pointer;
+}
+
+.close-modal:hover {
+  background-color: var(--close-modal-button-background-color-hover);
 }
 
 .share-button img {
@@ -173,6 +179,7 @@
   height: var(--send-modal-button-height);
   min-height: var(--send-modal-button-min-height);
   font-size: var(--send-modal-button-font-size);
+  cursor: pointer;
 }
 
 .form-style {

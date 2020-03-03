@@ -59,25 +59,57 @@ $ npm install mastodon-share-button
 | `send_button_text`    | `send_button_text`    | Not Required | `string`  | `"Send"`                                     |
 | `share_button_text`   | `share_button_text`   | Not Required | `string`  | `"Share to Mastodon"`                        |
 
-## CSS Custom Properties
-| Name                            | Description
-| ------------------------------- | --------------------------------------------------------------------|
-| --share-button-background-color | Share button background color. Default to `#cccccc`                 |
-| --share-button-background-color-hover | Share button background hover color. Default to `#949292`     |
+## CSS Custom Properties (Styling)
+### Share button
+| Name                                  | Description
+| -------------------------------       | --------------------------------------------------------------------|
+| --share-button-background-color       | Share button background color. Default to `#cccccc`                 |
+| --share-button-background-color-hover | Share button background hover color. Default to `#949292`           |
+| --share-button-border-radius          | Default to `5px`                                                    |
+| --share-button-padding                | Default to `12px`                                                   |
+| --share-button-color                  | Default to `#ffffff`                                                |
+| --share-button-font-size              | Default to `16px`                                                   |
+| --share-button-font-weight            | Default to `bold`                                                   |
+| --share-button-border                 | Defaul to `none`                                                    |
 
-  /* Share button CSS Variables */
- 
+### Modal
+| Name                                          | Description
+| -------------------------- | -----------------------------------------------------|
+| --modal-title-color        | Text color to modal title. Default to `#2c3e50`      |
+| --modal-background-color   | Modal background color. Default to `#ffffff`         |
 
-  --share-button-border-radius: 5px;
-  --share-button-padding: 12px;
-  --share-button-color: #ffffff;
-  --share-button-font-size: 16px;
-  --share-button-font-weight: bold;
-  --share-button-border: none;
 
-<!-- ### Frameworks support -->
+### Modal close button
+| Name                                          | Description
+| -------------------------------               | --------------------------------------------------------------------|
+| --close-modal-button-background-color         | Close button background color. Default to `#cccccc`                 |
+| --close-modal-button-background-color-hover   | Share button background hover color. Default to `#949292`           |
+| --close-modal-button-border-radius            | Default to `5px`                                                    |
+| --close-modal-button-padding                  | Default to `6px`                                                   |
+| --close-modal-button-color                    | Default to `#ffffff`                                                |
+| --close-modal-button-font-size                | Default to `16px`                                                   |
+| --close-modal-button-font-weight              | Default to `bold`                                                   |
+| --close-modal-button-border                   | Defaul to `none`                                                    |
 
-<!-- * [React](docs/installation/react.md)
-* [Angular](docs/installation/angular.md)
-* [Vue](docs/installation/vue.md) -->
+### Modal select option and input
+| Name                                          | Description
+| -------------------------- | -----------------------------------------------------    |
+| --select-color             | Select and input font color. Default to `#2c3e50`        |
+| --select-background-color  | Select and input background color. Default to `#ffffff`  |
+| --select-border            | Select and input border. Default to `2px solid #2c3e50`  |
+| --select-font-weight       | Select and input font weight. Default to `bolder`        |
+| --select-font-size         | Font size. Default to `18px`                             |
+| --select-padding           | Default to `10px`                                        |
+| --select-border-radius     | Default to `0.25em`                                      |
+| --select-line-height       | Default to `3`                                           |
 
+### Modal send button
+| Name                                          | Description
+| ------------------------------------ | -------------------------------    |
+| --send-modal-button-color            | Default to `#ffffff`               |
+| --send-modal-button-background-color | Default to `#2692da`               |
+| --send-modal-button-border-radius    | Default to `5px`                   |
+| --send-modal-button-width            | Default to `100%`                  |
+| --send-modal-button-height           | Default to `6vh`                   |
+| --send-modal-button-min-height       | Default to `42px`                  |
+| --send-modal-button-font-size        | Default to `4vh`                   |
