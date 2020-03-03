@@ -150,7 +150,7 @@ img {
   font-size: var(--send-modal-button-font-size);
 }
 
-select {
+.form-style {
   -webkit-appearance: none;
   -moz-appearance: none;
   -ms-appearance: none;
@@ -161,6 +161,7 @@ select {
   position: relative;
   display: flex;
   width: 100%;
+  
   /* height: 3em; */
   line-height: var(--select-line-height);
   overflow: hidden;
@@ -171,4 +172,9 @@ select {
   color: var(--select-color);
   border: var(--select-border);
   background-color: var(--select-background-color);
+}
+
+
+.input-width{
+  width: calc(100% - 24px);
 }

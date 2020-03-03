@@ -86,7 +86,7 @@ export class MastodonShareButton {
                 <br/>
                 <h2 class="modal-title">{this.modal_title}</h2>
                 <form onSubmit={(e) => this.handleSubmit(e)}>
-                  <select onInput={(event) => this.handleSelect(event)}>
+                  <select onInput={(event) => this.handleSelect(event)} class="form-style">
                     {this.parseJSON(this.instances).map(instance => (
                       <option value={instance}>{instance}</option>
                     ))}
@@ -94,8 +94,9 @@ export class MastodonShareButton {
                   </select>
                   <br />
                   {
-                    this.selected_instance === 'other_instance' ? <input type="url" placeholder="https://" value={this.value} onInput={(event) => this.handleChange(event)} /> : null
+                    this.selected_instance === 'other_instance' ? <input type="url" placeholder="https://" value={this.value} onInput={(event) => this.handleChange(event)}  class="form-style input-width"/> : null
                   }
+                  <br/>
                   <input type="submit" value={this.send_button_text} class="send-button" />
                 </form>
               </slot>
