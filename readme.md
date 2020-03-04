@@ -18,7 +18,7 @@ This package is a user friendly web component to share in mastodon.
 ## Installation
 ### Via CDN
 ```html
-<script src="https://unpkg.com/mastodon-share-button@1.0.0/dist/mastodon-share/mastodon-share.js"></script>
+<script src="https://unpkg.com/mastodon-share-button@latest/dist/mastodon-share-button/mastodon-share-button.js"></script>
 ```
 ### Via NPM
 ```bash
