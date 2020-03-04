@@ -1,6 +1,6 @@
 {
   "name": "mastodon-share-button",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Stencil Mastodon share button",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -42,5 +42,5 @@
   "bugs": {
     "url": "https://github.com/codesyntax/mastodon-share-button/issues"
   },
-  "homepage": "https://gitlab.com/codesyntax/mastodon-social-button#readme"
+  "homepage": "https://github.com/codesyntax/mastodon-social-button#readme"
 }
