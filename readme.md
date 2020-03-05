@@ -10,6 +10,9 @@ This package is a user friendly web component to share in mastodon.
 | --------- | --------- | --------- | --------- | --------- | --------- |
 | IE11 *([limited](docs/ie.md))*, Edge| last 2 versions| last 2 versions| last 2 versions| last 2 versions| last 2 versions
 
+<br/>
+
+# [View demos 👁](https://codepen.io/bipoza/pen/XWbegOM?editors=1100)
 # Preview
 
 ![](preview.gif)
@@ -18,7 +21,7 @@ This package is a user friendly web component to share in mastodon.
 ## Installation
 ### Via CDN
 ```html
-<script src="https://unpkg.com/mastodon-share-button@1.0.0/dist/mastodon-share/mastodon-share.js"></script>
+<script src="https://unpkg.com/mastodon-share-button@latest/dist/mastodon-share-button/mastodon-share-button.js"></script>
 ```
 ### Via NPM
 ```bash
@@ -46,21 +49,35 @@ $ npm install mastodon-share-button
 # Documentation
 ## Properties
 
-| Property              | Attribute             | Required     | Type      | Default                                      |
-| --------------------- | --------------------- | -----------  | --------- | -------------------------------------------- |
-| `share_message`       | `share_message`       | Required     | `string`  | `undefined`                                  |
-| `close_button_text`   | `close_button_text`   | Not Required | `string`  | `"Close"`                                    |
-| `dark_mode`           | `dark_mode`           | Not Required | `boolean` | `false`                                      |
-| `icon_url`            | `icon_url`            | Not Required | `string`  | `mastodon oficial logo`                      |
-| `instances`           | `instances`           | Not Required | `string`  | `'["https://mastodon.social"]'`              |
-| `modal_title`         | `modal_title`         | Not Required | `string`  | `"Share to Mastodon"`                        |
-| `open`                | `open`                | Not Required | `boolean` | `false`                                      |
-| `other_instance_text` | `other_instance_text` | Not Required | `string`  | `"Other instance"`                           |
-| `send_button_text`    | `send_button_text`    | Not Required | `string`  | `"Send"`                                     |
-| `share_button_text`   | `share_button_text`   | Not Required | `string`  | `"Share to Mastodon"`                        |
+| Property              | Attribute             | Required     | Description                                        | Type     | Default                          |
+| --------------------- | --------------------- | ------------ | -------------------------------------------------- | -------- | -------------------------------- |
+| `share_message`       | `share_message`       | Required     | Text to share in mastodon.                         |`string`  | `undefined`                      |
+| `instances`           | `instances`           | Not Required | List of instances to display in the select option. |`string`  | `'["https://mastodon.social"]'`  |
+| `dark_mode`           | `dark_mode`           | Not Required | Option to activate dark mode.                      |`boolean` | `false`                          |
+| `send_button_text`    | `send_button_text`    | Not Required | Text to show at the bottom of sharing in the modal.|`string`  | `"Send"`                         |
+| `icon_url`            | `icon_url`            | Not Required | Icon url. Put it "" to not display any icon.       |`string`  | `mastodon oficial logo`          |
+| `modal_title`         | `modal_title`         | Not Required | Title to display in modal.                         |`string`  | `"Share to Mastodon"`            |
+| `close_button_text`   | `close_button_text`   | Not Required | Text to display to close modal.                    |`string`  | `"Close"`                        |
+| `other_instance_text` | `other_instance_text` | Not Required | Text to display on the form.                       |`string`  | `"Other instance"`               |
+| `share_button_text`   | `share_button_text`   | Not Required | Text to show at the bottom of sharing. Put it "" to not display any text. |`string`  | `"Share to Mastodon"`            |
+| `open`                | `open`                | Not Required | Variable to display the modal opened.              |`boolean` | `false`                          |
 
 ## CSS Custom Properties (Styling)
-* Important: If you are using the dark mode you will not be able to apply any color variable, because this mode will overlap the dark mode 
+The component could be styled with the help of CSS3 variables.
+
+Example:
+
+```html
+<style type="text/css">
+  mastodon-share-button {
+    --share-button-background-color:#259FFC;
+    --share-button-background-color-hover:#C7E7FE;
+  }
+</style>
+```
+
+* **Important**: If you are using the dark mode, you cannot apply any color variable, because this mode will overlap your css.
+
 ### Share button
 | Name                                  | Description
 | -------------------------------       | --------------------------------------------------------------------|

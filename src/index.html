@@ -9,27 +9,76 @@
   <script type="module" src="/build/mastodon-share-button.esm.js"></script>
   <script nomodule src="/build/mastodon-share-button.js"></script>
   <!-- <link rel="stylesheet" href="/build/mastodon-share-button.css"> -->
-<style>
-  .mastodon-button{
-    --modal-background-color:red !important;
-    /* --img-width:30px;
-    --share-button-padding:10px;
-    --share-button-border-radius:50%; */
-    /* --button-color:red; */
-  }
-  
-</style>
+  <style>
+    .round {
+      --share-button-border-radius: 50%;
+    }
+
+    .small {
+      --img-width: 15px;
+      --img-height: 15px;
+    }
+
+    .blue-color {
+      --share-button-background-color: #259FFC;
+      --share-button-background-color-hover: #1e7fc9;
+    }
+
+    .text-small {
+      --share-button-font-size: 10px;
+      --share-button-padding: 5px;
+      --img-width: 12px;
+      --img-height: 12px;
+    }
+  </style>
 
 </head>
 
 <body>
-  <mastodon-share-button instances='["https://mastodon.eus", "https://mastodon.jalgi.eus"]' share_message="Aproba bat"
-    share_button_text="Partekatu mastodonen" close_button_text="Itxi" send_button_text="Bidali" modal_title="Partekatu mastodonen"
-    other_instance_text="Gehitu zure instantzia" dark_mode="true" class="mastodon-button">
+
+  <h2>Basic</h2>
+  <mastodon-share-button share_message="Text to share"></mastodon-share-button>
+
+  <br>
+
+  <h2>Dark mode</h2>
+  <mastodon-share-button share_message="Text to share" dark_mode="true"></mastodon-share-button>
+
+  <br />
+
+  <h2>Custom text</h2>
+  <mastodon-share-button instances='["https://mastodon.eus", "https://mastodon.jalgi.eus"]'
+    share_message="Text to share" share_button_text="Custom share button text" close_button_text="Custom close text"
+    send_button_text="Custom send text" modal_title="Custom modal title"
+    other_instance_text="Custom other instance select option text" dark_mode="true"></mastodon-share-button>
+
+  <br>
+
+  <h2>Custom formats</h2>
+  <mastodon-share-button share_message="Text to share" share_button_text="" class="round"></mastodon-share-button>
+
+  <br>
+
+  <mastodon-share-button share_message="Text to share" icon_url=""></mastodon-share-button>
+
+  <br>
+
+  <h2>Custom color</h2>
+  <mastodon-share-button share_message="Text to share" share_button_text="" class="round blue-color">
   </mastodon-share-button>
 
- <!--  <mastodon-share-button >
-  </mastodon-share-button> -->
+  <h2>Custom image</h2>
+  <mastodon-share-button share_message="Text to share" share_button_text=""
+    icon_url="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Mastodon_First_Logo.svg/1200px-Mastodon_First_Logo.svg.png">
+  </mastodon-share-button>
+
+  <h2>Custom size</h2>
+  <mastodon-share-button share_message="Text to share" share_button_text="" class="round small blue-color">
+  </mastodon-share-button>
+
+  <br>
+  <mastodon-share-button share_message="Text to share" icon_url="" class="text-small blue-color">
+  </mastodon-share-button>
 
 </body>
 

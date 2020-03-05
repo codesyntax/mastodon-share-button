@@ -1,6 +1,6 @@
 {
   "name": "mastodon-share-button",
-  "version": "1.0.3",
+  "version": "1.0.6",
   "description": "Stencil Mastodon share button",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -9,7 +9,7 @@
   "types": "dist/types/index.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
-  "unpkg": "dist/mastodon-share/mastodon-share.js",
+  "unpkg": "dist/mastodon-share-button/mastodon-share-button.js",
   "files": [
     "dist/",
     "loader/"
@@ -36,11 +36,14 @@
     "mastodon",
     "share",
     "button",
-    "social"
+    "social",
+    "web component",
+    "stencil",
+    "stenciljs"
   ],
   "author": "bipoza",
   "bugs": {
     "url": "https://github.com/codesyntax/mastodon-share-button/issues"
   },
-  "homepage": "https://github.com/codesyntax/mastodon-social-button#readme"
+  "homepage": "https://github.com/codesyntax/mastodon-share-button#readme"
 }
