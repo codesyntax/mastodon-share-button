@@ -9,7 +9,7 @@
   "types": "dist/types/index.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
-  "unpkg": "dist/mastodon-share-button/mastodon-share-button.js",
+  "unpkg": "dist/mastodon-share-button.js",
   "files": [
     "dist/",
     "loader/"
