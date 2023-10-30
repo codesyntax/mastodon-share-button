@@ -153,7 +153,7 @@
   padding-left: 5px;
 }
 .share-button {
-  border: var(--share-button-boder);
+  border: var(--share-button-border);
   background-color: var(--share-button-background-color);
   padding: var(--share-button-padding);
   border-radius: var(--share-button-border-radius);
